@@ -1,0 +1,26 @@
+{
+  "name": "webcase",
+  "version": "1.0.0",
+  "description": "product name",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexandr-Belchev/product.git"
+  },
+  "author": "sasha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexandr-Belchev/product/issues"
+  },
+  "homepage": "https://github.com/Alexandr-Belchev/product#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^3.1.0"
+  }
+}

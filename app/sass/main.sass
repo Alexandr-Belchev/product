@@ -1,0 +1,196 @@
+body
+  margin: 0
+  padding: 0
+  font-family: 'Arial'
+  font-size: 16px
+p
+  margin: 0
+  color: #333333
+a
+  text-decoration: none
+ul
+  margin: 0
+h1, h2
+  margin: 0
+h2
+  text-align: center
+  font-size: 30px
+  color: #445162
+
+//header//
+header
+  color: #fff
+  background-color: #445162
+header .container
+  display: flex
+header h1
+  font-size: 60px
+  font-weight: 500
+  line-height: 50px
+header ul
+  list-style-image: url("../img/2.png")
+  margin-top: 47px
+header ul li
+  font-size: 20px
+  margin: 7px 0
+.header-part-1, .header-part-2
+  width: 50%
+.header-part-2
+  text-align: right
+//about//
+.about h2
+  text-align: left
+.about-part-1
+  width: 56%
+.about-part-2
+  width: 44%
+  text-align: right
+.about-text
+  margin-top: 25px
+.about-text p+p
+  margin-top: 15px
+//services//
+.services
+  background-color: #f5f5f5
+.services__item
+  display: flex
+  margin-top: 25px
+.about__part img
+  height: 32px
+.services-item-text
+  margin-left: 7px
+.about__part
+  width: 50%
+//Screenshots//
+.screenshots__item
+  display: flex
+  width: 50%
+  margin-top: 30px
+.screenshots__item span
+  font-size: 24px
+  color: #445162
+  line-height: 18px
+.screenshots__item-text
+  margin: 0 13px
+.screenshots__item-text p
+  margin-top: 10px
+  line-height: 22px
+.screenshots__item img
+  max-height: 150px
+//reviews//
+.reviews
+  background-color: #f5f5f5
+.reviews-text
+  background-color: #ebebeb
+.reviews-text span
+  color: #989898
+  font-size: 14px
+  font-style: normal
+.reviews_item img
+  max-height: 65px
+.reviews_item
+  display: flex
+  width: 49%
+  margin-top: 30px
+.reviews-text
+  width: 80%
+  margin-left: 25px
+  padding: 12px
+  font-style: italic
+  position: relative
+  border-radius: 5px
+  &:before
+    content: ""
+    width: 0
+    height: 0
+    top: 22px
+    left: -11px
+    position: absolute
+    border-right: 11px solid #ebebeb
+    border-top: 11px solid transparent
+    border-bottom: 11px solid transparent
+
+.reviews-text p
+  margin-bottom: 12px
+
+//buy-it
+.buy-it .content
+  display: flex
+  align-items: flex-end
+.buy-it_item
+  background-color: #445162
+  width: 300px
+  border-radius: 5px
+  text-align: center
+  display: flex
+  flex-wrap: wrap
+  padding: 15px 0
+  justify-content: space-around
+.buy-it_item ol
+  width: 100%
+  text-align: left
+  color: #fff
+  font-size: 14px
+  padding-left: 50px
+.buy-it_item ol li
+  margin: 7px 0
+.buy-it_item span
+  font-size: 24px
+.buy-it-overlay
+  height: 65px
+  box-sizing: border-box
+  color: #445162
+  background: #fff
+  font-size: 40px
+  line-height: 65px
+  width: 98%
+.buy-it_item p, .buy-it_item span
+  color: #fff
+.buy-it_item button
+  color: #445162
+  background: #fff
+  border: none
+  font-size: 18px
+  font-weight: bold
+  width: 80%
+  border-radius: 5px
+  text-transform: uppercase
+  padding: 8px 0
+//contact//
+.contact
+  color: #fff
+  background-color: #445162
+.contact-form
+  width: 40%
+.contact-form input::placeholder, .contact-form textarea::placeholder
+  font-size: 16px
+  color: #445162
+  font-weight: bold
+.contact-form input, .contact-form textarea
+  width: 100%
+  border-radius: 5px
+  border: none
+  padding: 10px
+//footer//
+
+// common//
+.content
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+//header .container, .about .container, .services .container, .screenshots .container, .reviews .container, .buy-it .container, .contact .container
+//  display: flex
+header, .about, .services, .screenshots, .reviews, .buy-it, .contact
+  padding: 50px 0
+header, .about, .services, .screenshots, .reviews, .buy-it, .contact, footer
+  display: flex
+  justify-content: space-around
+
+// media
+@media screen and (min-width: 1200px)
+  .container
+    width: 1180px
+    margin: 0 10px
+@media screen and (max-width: 1200px)
+  .container
+    width: 940px
