@@ -226,30 +226,31 @@ header ul li {
 .contact-form {
   width: 40%; }
 
-.contact-form input::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder {
+.contact-form input::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder, .contact-form button {
   font-size: 16px;
-  color: #445162;
-  font-weight: bold; }
+  color: #445162; }
 
-.contact-form input::-moz-placeholder, .contact-form textarea::-moz-placeholder {
+.contact-form input::-moz-placeholder, .contact-form textarea::-moz-placeholder, .contact-form button {
   font-size: 16px;
-  color: #445162;
-  font-weight: bold; }
+  color: #445162; }
 
-.contact-form input:-ms-input-placeholder, .contact-form textarea:-ms-input-placeholder {
+.contact-form input:-ms-input-placeholder, .contact-form textarea:-ms-input-placeholder, .contact-form button {
   font-size: 16px;
-  color: #445162;
-  font-weight: bold; }
+  color: #445162; }
 
-.contact-form input::-ms-input-placeholder, .contact-form textarea::-ms-input-placeholder {
+.contact-form input::-ms-input-placeholder, .contact-form textarea::-ms-input-placeholder, .contact-form button {
   font-size: 16px;
-  color: #445162;
-  font-weight: bold; }
+  color: #445162; }
 
-.contact-form input::placeholder, .contact-form textarea::placeholder {
+.contact-form input::placeholder, .contact-form textarea::placeholder, .contact-form button {
   font-size: 16px;
-  color: #445162;
-  font-weight: bold; }
+  color: #445162; }
+
+.contact-form input, .contact-form textarea {
+  margin-top: 22px; }
+
+.contact-form textarea {
+  margin-bottom: 22px; }
 
 .contact-form input, .contact-form textarea {
   width: 100%;
@@ -257,6 +258,30 @@ header ul li {
           border-radius: 5px;
   border: none;
   padding: 10px; }
+
+.contact-form textarea {
+  height: 170px; }
+
+.contact-form button {
+  border: none;
+  background: #fff;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  text-transform: uppercase;
+  padding: 10px 55px; }
+
+.contact-form form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .content {
   display: -webkit-box;
