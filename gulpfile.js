@@ -2,7 +2,12 @@ var gulp         = require('gulp'), // Подключаем Gulp
     sass         = require('gulp-sass'), //Подключаем Sass пакет,
     browserSync  = require('browser-sync'), // Подключаем Browser Sync
     jade         = require('gulp-jade'),
-    autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
+    autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов
+    imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
+    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
+    cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
+    rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
+    cache        = require('gulp-cache'); // Подключаем библиотеку кеширования
 
 gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src('app/sass/**/*.sass') // Берем источник
@@ -28,6 +33,8 @@ gulp.task('jade', function() {
 });
 gulp.task('css-libs', ['sass'], function() {
     return gulp.src('app/css/libs.css') // Выбираем файл для минификации
+        .pipe(cssnano()) // Сжимаем
+        .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
 });
 
@@ -36,12 +43,22 @@ gulp.task('watch', ['browser-sync', 'css-libs', 'jade'], function() {
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
 });
 
+gulp.task('img', function() {
+    return gulp.src('app/img/**/*') // Берем все изображения из app
+        .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
+});
 
-
-gulp.task('build', ['sass', 'browser-sync'], function() {
+gulp.task('build', ['sass', 'img', 'browser-sync'], function() {
 
     var buildCss = gulp.src([ // Переносим библиотеки в продакшен
         'app/css/main.css',
+        'app/css/fonts.css'
     ])
         .pipe(gulp.dest('dist/css'))
 

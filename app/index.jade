@@ -2,6 +2,7 @@ html(lang="en")
     head
         title product name
         link(rel='stylesheet', href='css/main.css', type='text/css' )
+        link(rel='stylesheet', href='css/fonts.css', type='text/css' )
     body
         header
             .container
@@ -28,32 +29,31 @@ html(lang="en")
                 div.container
                     h2 Dignity and pluses product
                     div.content
-                        div.about__part
-                            div.services__item
-                                img(src="./img/4.png")
-                                div.services-item-text
-                                    p Delectus dolorem vero quae beatae quasi dolor deserunt iste amet atque, impedit iure placeat, ullam. Reprehenderit aliquam, nemo cum velit ratione perferendis quas, maxime, quaerat porro totam, dolore minus inventore.
-                            div.services__item
-                                img(src="./img/4.png")
-                                div.services-item-text
-                                    p Delectus dolorem vero quae beatae quasi dolor deserunt iste amet atque, impedit iure placeat, ullam. Reprehenderit aliquam, nemo cum velit ratione perferendis quas, maxime, quaerat porro totam, dolore minus inventore.
-                            div.services__item
-                                img(src="./img/4.png")
-                                div.services-item-text
-                                    p Delectus dolorem vero quae beatae quasi dolor deserunt iste amet atque, impedit iure placeat, ullam. Reprehenderit aliquam, nemo cum velit ratione perferendis quas, maxime, quaerat porro totam, dolore minus inventore.
-                        div.about__part
-                            div.services__item
-                                img(src="./img/4.png")
-                                div.services-item-text
-                                    p Delectus dolorem vero quae beatae quasi dolor deserunt iste amet atque, impedit iure placeat, ullam. Reprehenderit aliquam, nemo cum velit ratione perferendis quas, maxime, quaerat porro totam, dolore minus inventore.
-                            div.services__item
-                                img(src="./img/4.png")
-                                div.services-item-text
-                                    p Delectus dolorem vero quae beatae quasi dolor deserunt iste amet atque, impedit iure placeat, ullam. Reprehenderit aliquam, nemo cum velit ratione perferendis quas, maxime, quaerat porro totam, dolore minus inventore.
-                            div.services__item
-                                img(src="./img/4.png")
-                                div.services-item-text
-                                    p Delectus dolorem vero quae beatae quasi dolor deserunt iste amet atque, impedit iure placeat, ullam. Reprehenderit aliquam, nemo cum velit ratione perferendis quas, maxime, quaerat porro totam, dolore minus inventore.
+                        div.services__item
+                            a.icon-plus
+                            div.services-item-text
+                                - var services_text = "Delectus dolorem vero quae beatae quasi dolor deserunt iste amet atque, impedit iure placeat, ullam. Reprehenderit aliquam, nemo cum velit ratione perferendis quas, maxime, quaerat porro totam, dolore minus inventore."
+                                p #{services_text}
+                        div.services__item
+                            a.icon-plus
+                            div.services-item-text
+                                p #{services_text}
+                        div.services__item
+                            a.icon-plus
+                            div.services-item-text
+                                p #{services_text}
+                        div.services__item
+                            a.icon-plus
+                            div.services-item-text
+                                p #{services_text}
+                        div.services__item
+                            a.icon-plus
+                            div.services-item-text
+                                p #{services_text}
+                        div.services__item
+                            a.icon-plus
+                            div.services-item-text
+                                p #{services_text}
 
         section.screenshots
                 div.container
@@ -62,23 +62,26 @@ html(lang="en")
                         div.screenshots__item
                             img(src="./img/5.jpg")
                             div.screenshots__item-text
-                                span The description for the image
-                                p Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.
+                                - var screenshots_descr = "The description for the image"
+                                - var screeshots_text1="Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor."
+                                - var screenshots_text2="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis facilis fuga, illo at. Natus eos, eligendi illum rerum omnis porro ex, magni, explicabo veniam incidunt in quam sapiente ut ipsum."
+                                span #{screenshots_descr}
+                                p #{screeshots_text1}
                         div.screenshots__item
                             img(src="./img/5.jpg")
                             div.screenshots__item-text
-                                span The description for the image
-                                p Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.
+                                span #{screenshots_descr}
+                                p #{screeshots_text1}
                         div.screenshots__item
                             img(src="./img/5.jpg")
                             div.screenshots__item-text
-                                span The description for the image
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis facilis fuga, illo at. Natus eos, eligendi illum rerum omnis porro ex, magni, explicabo veniam incidunt in quam sapiente ut ipsum.
+                                span #{screenshots_descr}
+                                p #{screenshots_text2}
                         div.screenshots__item
                             img(src="./img/5.jpg")
                             div.screenshots__item-text
-                                span The description for the image
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis facilis fuga, illo at. Natus eos, eligendi illum rerum omnis porro ex, magni, explicabo veniam incidunt in quam sapiente ut ipsum.
+                                span #{screenshots_descr}
+                                p #{screenshots_text2}
 
         section.reviews
                 div.container
@@ -87,78 +90,97 @@ html(lang="en")
                         div.reviews_item
                             img(src="./img/6.png")
                             div.reviews-text
-                                p Porro officia cumque sint deleniti nemo facere rem vitae odit inventore cum odio, iste quia doloribus autem aperiam nulla ea neque reprehenderit. Libero doloribus, possimus officiis sapiente necessitatibus commodi consectetur?
-                                span Lourens S.
+                                - var reviews_descr = "Porro officia cumque sint deleniti nemo facere rem vitae odit inventore cum odio, iste quia doloribus autem aperiam nulla ea neque reprehenderit. Libero doloribus, possimus officiis sapiente necessitatibus commodi consectetur?"
+                                - var reviews_author = "Lourens S."
+                                p #{reviews_descr}
+                                span #{reviews_author}
                         div.reviews_item
                             img(src="./img/6.png")
                             div.reviews-text
-                                p Porro officia cumque sint deleniti nemo facere rem vitae odit inventore cum odio, iste quia doloribus autem aperiam nulla ea neque reprehenderit. Libero doloribus, possimus officiis sapiente necessitatibus commodi consectetur?
-                                span Lourens S.
+                                p #{reviews_descr}
+                                span #{reviews_author}
                         div.reviews_item
                             img(src="./img/6.png")
                             div.reviews-text
-                                p Porro officia cumque sint deleniti nemo facere rem vitae odit inventore cum odio, iste quia doloribus autem aperiam nulla ea neque reprehenderit. Libero doloribus, possimus officiis sapiente necessitatibus commodi consectetur?
-                                span Lourens S.
+                                p #{reviews_descr}
+                                span #{reviews_author}
                         div.reviews_item
                             img(src="./img/6.png")
                             div.reviews-text
-                                p Porro officia cumque sint deleniti nemo facere rem vitae odit inventore cum odio, iste quia doloribus autem aperiam nulla ea neque reprehenderit. Libero doloribus, possimus officiis sapiente necessitatibus commodi consectetur?
-                                span Lourens S.
+                                p #{reviews_descr}
+                                span #{reviews_author}
 
         section.buy-it
                 div.container
                     h2 Buy it now
-                    div.content
-                        div.buy-it_item
-                            span Standart
-                            div.buy-it-overlay $100
-                            ol
-                                li Porro officia cumque sint deleniti;
-                                li Тemo facere rem vitae odit;
-                                li Cum odio, iste quia doloribus autem;
-                                li Aperiam nulla ea neque.
-                            button buy
-                        div.buy-it_item
-                            span Premium
-                            div.buy-it-overlay $150
-                            ol
-                                li Porro officia cumque sint deleniti;
-                                li Тemo facere rem vitae odit;
-                                li Cum odio, iste quia doloribus autem;
-                                li Aperiam nulla ea neque.
-                                li Porro officia cumque sint deleniti;
-                                li Тemo facere rem vitae odit;
-                                li Cum odio, iste quia doloribus autem;
-                                li Aperiam nulla ea neque.
-                            button buy
-                        div.buy-it_item
-                            span Lux
-                            div.buy-it-overlay $200
-                            ol
-                                li Porro officia cumque sint deleniti;
-                                li Тemo facere rem vitae odit;
-                                li Cum odio, iste quia doloribus autem;
-                                li Aperiam nulla ea neque.
-                                li Porro officia cumque sint deleniti;
-                                li Тemo facere rem vitae odit;
-                                li Cum odio, iste quia doloribus autem;
-                                li Aperiam nulla ea neque.
-                                li Porro officia cumque sint deleniti;
-                                li Тemo facere rem vitae odit;
-                                li Cum odio, iste quia doloribus autem;
-                                li Aperiam nulla ea neque.
-                            button buy
+                        div.content
+                            div.buy-it_item
+                                span.buy-it__heading Standart
+                                div.buy-it-overlay $100
+                                    mixin list
+                                            li Porro officia cumque sint deleniti;
+                                            li Тemo facere rem vitae odit;
+                                            li Cum odio, iste quia doloribus autem;
+                                            li Aperiam nulla ea neque.
+                                ol
+                                    +list
+                                a buy
+                            div.buy-it_item
+                                span.buy-it__heading Premium
+                                div.buy-it-overlay $150
+                                ol
+                                    +list
+                                    +list
+                                a buy
+                            div.buy-it_item
+                                span.buy-it__heading Lux
+                                div.buy-it-overlay $200
+                                ol
+                                    +list
+                                    +list
+                                    +list
+                                a buy
         section.contact
                 div.container
                     h2 Contacts
-                    div.contact-form
-                        form
-                            input(placeholder="Yout name:")
-                            input(placeholder="Yout email:")
-                            textarea(placeholder="Yout message:")
-                            button Send
-                    div.contact-info
-                        ul.contact_media
-                        ul.contact_social-link
+                    div.content
+                        div.contact-form
+                            form(method="POST" action="")
+                                input(placeholder="Your name:" type="text" name='name')
+                                input(placeholder="Your email:" type="text" name='email')
+                                textarea(placeholder="Your message:" name='message')
+                                input#submit(type="submit" value="Send")
+                        div.contact-info
+                            div.contact_media
+                                a
+                                    i.icon-skype
+                                    span.media-text here_your_login_skype
+                                a
+                                    i.icon-icq
+                                    span.media-text 279679659
+                                a
+                                    i.icon-email
+                                    span.media-text psdhtmlcss@mail.ru
+                                a
+                                    i.icon-phone
+                                    span.media-text 80 00 4568 55 55
+
+                            ul.contact_social-link
+                                li
+                                    a(href="https://twitter.com")
+                                        img(src="./img/twitter.png")
+                                li
+                                    a(href="https://facebook.com")
+                                        img(src="./img/facebook.png")
+                                li
+                                    a(href="https://linkedin.com")
+                                        img(src="./img/linkedin.png")
+                                li
+                                    a(href="https://gmail.com")
+                                        img(src="./img/gmail.png")
+                                li
+                                    a(href="https://youtube.com")
+                                        img(src="./img/youtube.png")
+
         footer
             p Copyright © 2014 Product name · PSD HTML CSS
