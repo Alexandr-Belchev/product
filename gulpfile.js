@@ -1,7 +1,7 @@
 var gulp         = require('gulp'), // Подключаем Gulp
     sass         = require('gulp-sass'), //Подключаем Sass пакет,
     browserSync  = require('browser-sync'), // Подключаем Browser Sync
-    jade         = require('gulp-jade'),
+    pug         = require('gulp-pug'),
     autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов
     imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
     pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
@@ -25,11 +25,10 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
         notify: false // Отключаем уведомления
     });
 });
-gulp.task('jade', function() {
-    return gulp.src('app/**/*.jade')
-        .pipe(jade())
+gulp.task('pug', function() {
+    return gulp.src('app/**/*.pug')
+        .pipe(pug())
         .pipe(gulp.dest('app')) // указываем gulp куда положить скомпилированные HTML файлы
-        .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
 gulp.task('css-libs', ['sass'], function() {
     return gulp.src('app/css/libs.css') // Выбираем файл для минификации
@@ -38,7 +37,8 @@ gulp.task('css-libs', ['sass'], function() {
         .pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
 });
 
-gulp.task('watch', ['browser-sync', 'css-libs', 'jade'], function() {
+gulp.task('watch', ['browser-sync', 'css-libs'], function() {
+    gulp.watch('app/**/*.pug', ['pug']);
     gulp.watch('app/sass/**/*.sass', ['sass']); // Наблюдение за sass файлами в папке sass
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
 });
