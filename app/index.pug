@@ -1,4 +1,5 @@
 doctype html
+- let socials = [{link: 'https://twitter.com', img: './img/twitter.png'}, { link: 'https://facebook.com', img: './img/facebook.png'}, {link: 'https://linkedin.com',img: './img/linkedin.png'},{link: 'https://gmail.com', img: './img/gmail.png'}, {link: 'https://youtube.com', img: './img/youtube.png'}]
 html
     include includes/list.pug
     head
@@ -119,23 +120,12 @@ html
                                 a
                                     i.icon-phone
                                     span.media-text 80 00 4568 55 55
-
                             ul.contact_social-link
-                                li
-                                    a(href="https://twitter.com")
-                                        img(src="./img/twitter.png")
-                                li
-                                    a(href="https://facebook.com")
-                                        img(src="./img/facebook.png")
-                                li
-                                    a(href="https://linkedin.com")
-                                        img(src="./img/linkedin.png")
-                                li
-                                    a(href="https://gmail.com")
-                                        img(src="./img/gmail.png")
-                                li
-                                    a(href="https://youtube.com")
-                                        img(src="./img/youtube.png")
+                                each social, i in socials
+                                    li
+                                        a(href=social.link)
+                                            img(src=social.img)
+
 
             footer
                 p Copyright © 2014 Product name · PSD HTML CSS
